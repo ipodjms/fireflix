@@ -1,3 +1,4 @@
+import { Country } from './../../movies/shared/country.enum';
 import { Injectable, Injector, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -45,23 +46,25 @@ export class HttpService<T> {
 
 
   public buildFakeMovies(): T[] {
-    let x: Movie[] = [];
-    x = [
+    let fakeMovieList: Movie[] = [];
+    fakeMovieList = [
       {
         id: 'ee2cb54e-c05c-11ea-b3de-0242ac130004',
         name: 'Movie 1',
         duration: 90000,
-        genre: ['Humor'],
-        source: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+        genre: ['humor'],
+        source: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        country: Country.BRL
       },
       {
         id: '009a52a4-c05d-11ea-b3de-0242ac130004',
         name: 'Movie 2',
         duration: 90000,
-        genre: ['Comedy'],
-        source: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
+        genre: ['comedy'],
+        source: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+        country: Country.USD
       }
     ];
-    return x as unknown as T[];
+    return fakeMovieList as unknown as T[];
   }
 }

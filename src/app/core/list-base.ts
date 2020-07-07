@@ -3,13 +3,9 @@ import { HttpService } from './http/http.service';
 import { OnInit, Injector, AfterContentInit } from '@angular/core';
 
 
-export class ListBaseComponent<M extends ModelBase, S extends HttpService<M>> implements OnInit, AfterContentInit {
-  constructor(protected injector: Injector, protected service: S) {
+export class ListBaseComponent<M extends ModelBase, S extends HttpService<M>> implements OnInit {
+  constructor(protected injector: Injector, protected service: S) {  }
 
-  }
-  public ngAfterContentInit(): void {
-    this.loadList();
-  }
 
   public models: M[] = [];
 
