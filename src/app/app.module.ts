@@ -18,7 +18,8 @@ import { CoreModule } from "./core/core.module";
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule
   ],
   providers: [AngularFireAuth],
   bootstrap: [AppComponent],

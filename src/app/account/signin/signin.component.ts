@@ -14,16 +14,13 @@ import { HttpClient } from "@angular/common/http";
 export class SigninComponent implements OnInit {
   constructor(
     public auth: AngularFireAuth,
-    public db: AngularFireDatabase,
-    public tokenService: TokenService,
-    private router: Router,
-    private httpClient: HttpClient
-  ) {}
+    private router: Router
+    ) {}
 
   ngOnInit() {}
 
   login() {
-    this.auth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then((x) => {
+    this.auth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then((user) => {
       this.router.navigate(["movies"]);
     });
   }
