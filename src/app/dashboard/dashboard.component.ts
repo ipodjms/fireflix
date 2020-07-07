@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
     private router: Router,
     private sortservice: SortService
   ) {}
-  device: Observable<any[]>;
+    device: Observable<any[]>;
   humidity: Observable<any[]>;
   temperature: Observable<any[]>;
   timeAgo: Observable<any[]>;
@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
   public currenTemperature: number;
   public currentDevice = new Device();
   public sortedImage: string;
-  pubic;
+  
   ngOnInit(): void {
     this.sortedImage = String(this.sortservice.sortNumber(1, 5));
     if (this.auth.user) {

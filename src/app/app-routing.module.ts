@@ -17,6 +17,12 @@ const routes: Routes = [
     loadChildren: () =>
       import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
     canActivate: [AuthGuard],
+  },
+  {
+    path: "movies",
+    loadChildren: () =>
+      import("./movies/movies.module").then((m) => m.MoviesModule),
+    canActivate: [AuthGuard],
   }
 
   //   {
