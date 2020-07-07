@@ -1,0 +1,9 @@
+.state {
+  display: flex;
+  align-self: center;
+  margin-bottom: 4px !important;
+}
+
+.alert {
+  color: #d32f2f;
+}
