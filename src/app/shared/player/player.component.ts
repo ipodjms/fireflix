@@ -11,7 +11,6 @@ export class PlayerComponent implements OnInit {
 
   @ViewChild('pRef', null) pRef: ElementRef;
 
-
   constructor() { }
 
   ngOnInit() {

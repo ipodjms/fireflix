@@ -24,7 +24,7 @@ export class SigninComponent implements OnInit {
 
   login() {
     this.auth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then((x) => {
-      this.router.navigate(["dashboard"]);
+      this.router.navigate(["movies"]);
     });
   }
 }
