@@ -1,9 +1,10 @@
+import { PlayerComponent } from './player/player.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { CoreModule } from "../core/core.module";
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, CoreModule],
+  declarations: [PlayerComponent],
+  imports: [CommonModule],
+  exports: [PlayerComponent]
 })
 export class SharedModule {}
