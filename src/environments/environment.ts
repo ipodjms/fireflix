@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  development: true,
   firebase: {
     apiKey: "AIzaSyDZ_4-qwEh_YyA8lwe28DX_eOSjeUduS4E",
     authDomain: "teste-8f272.firebaseapp.com",
@@ -14,6 +15,7 @@ export const environment = {
     appId: "1:1099034239660:web:abe7b4ed5919ac83cbb509",
   },
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

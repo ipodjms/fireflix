@@ -1,4 +1,7 @@
+import { ActivatedRoute } from '@angular/router';
+import { MovieService } from './../shared/movie.service';
 import { Component, OnInit } from '@angular/core';
+import { Movie } from '../shared/movie';
 
 @Component({
   selector: 'app-movie-detail',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieDetailComponent implements OnInit {
 
-  constructor() { }
+  public movie: Movie;
+  constructor(private movieService:MovieService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    let movieId = this.getUrlsParams();
+    if (!!movieId) {
+      this.movie = this.movieService.getCurrentMovie(movieId);
+    }
+  }
+
+  getUrlsParams() {
+    return this.activatedRoute.snapshot.params.id;
+
   }
 
 }
