@@ -1,1 +1,17 @@
-<p>profile-detail works!</p>
+{{user?.displayName}}
+{{user?.email}}
+{{user?.phoneNumber}}
+<img src="{{image || user?.photoURL}}" alt="">
+{{userNick}}
+
+<form action="">
+    <label for="userNick">Seu Apelido</label>
+    <input type="text" [(ngModel)]="userNick" (blur)="setNickName(userNick)" name="userNick">
+
+    <label for="dataImage">Change Profile Image</label>
+    <input type="file" accept="image/*" (change)="changeListener($event)" name="dataImage">
+
+    <button (click)="removeImage()">Remove Image</button>
+
+</form>
+
