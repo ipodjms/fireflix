@@ -2,6 +2,7 @@
 
 <section class="d-flex flex-wrap w-100">
     <div class="m-4" *ngFor="let movie of models; trackBy: trackByMovie">
+      {{movie.genre | json}}
         <app-movie
           [movie]="movie"  
           (navigateToMovie)="onNavigateToMovie($event)"                  

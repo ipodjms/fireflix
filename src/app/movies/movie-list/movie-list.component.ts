@@ -20,7 +20,7 @@ export class MovieListComponent extends ListBaseComponent<Movie, MovieService> i
 
   public ngAfterContentInit(): void {
 
-    this.comedyMovies = [...this.models];
+    // this.comedyMovies = [...this.models];
     this.brazilianMovies = [...this.models];
 
     this.filterByGenre(this.comedyMovies, 'comedy');
@@ -41,16 +41,16 @@ export class MovieListComponent extends ListBaseComponent<Movie, MovieService> i
 
   filterBrazilianMovies () {
     this.brazilianMovies = this.brazilianMovies.filter (movie => {
-      return movie.country === 'BRL';
+      return movie.country === 'BR';
     })
   }
 
   public filterByGenre(movies: Movie[], genre:string): void {
-    movies.map((movie, idx) => {
-      movie.genre.map (genre => {
-        console.log (genre)
-       if (genre == genre) {
-         this.comedyMovies.splice(idx,1)
+    this.models.map((movie, idx) => {
+      movie.genre.map (objGenre => {
+        console.log (objGenre)
+       if (objGenre === genre) {
+        movies.push(movie);
        }
      })
    });
