@@ -1,3 +1,4 @@
+import { ProfilesRoutingModule } from './profiles.routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
@@ -7,7 +8,7 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 @NgModule({
   declarations: [ProfileDetailComponent],
   imports: [
-    CommonModule
+    CommonModule, ProfilesRoutingModule
   ]
 })
 export class ProfilesModule { }
