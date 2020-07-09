@@ -1,6 +1,15 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{movie.name}}</h5>      
+      <h5 class="card-title mb-0">{{movie.name}}</h5>      
+      <span *ngFor="let genre of movie.genre; let last = last" class="details">
+        <span *ngIf="!!genre && !last">
+          {{genre}} /
+        </span>
+        <span *ngIf="last">
+          {{genre}}
+        </span>
+      </span>
+      <div class="clearfix"></div>
       <a href="#"  (click)="navigateTo($event)" class="btn btn-primary">See Movie</a>
     </div>
   </div>

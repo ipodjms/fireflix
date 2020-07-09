@@ -9,3 +9,9 @@ body {
 .c-pointer {
     cursor: pointer !important;
 }
+
+.clearfix {
+    clear: both;
+    display: block;
+    width: 100%;
+}
