@@ -1,3 +1,6 @@
-<div (click)="navigateTo($event)">
-    {{movie.name}} -- {{movie.country}}
-</div> 
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.name}}</h5>      
+      <a href="#"  (click)="navigateTo($event)" class="btn btn-primary">See Movie</a>
+    </div>
+  </div>

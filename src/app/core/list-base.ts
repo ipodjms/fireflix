@@ -9,6 +9,7 @@ export class ListBaseComponent<M extends ModelBase, S extends HttpService<M>> im
 
   public models: M[] = [];
 
+
   public ngOnInit(): void {
     console.log ('list base');
     this.loadList();

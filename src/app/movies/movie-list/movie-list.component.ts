@@ -30,21 +30,25 @@ export class MovieListComponent extends ListBaseComponent<Movie, MovieService> i
 
   public ngAfterContentInit(): void {
 
-    this.brMovies = [...this.models];
-    this.esMovies = [...this.models];
-    this.arMovies = [...this.models];
-    this.usMovies = [...this.models];
+    if (!!this.models) {
+      this.brMovies = [...this.models];
+      this.esMovies = [...this.models];
+      this.arMovies = [...this.models];
+      this.usMovies = [...this.models];
+  
+      this.filterByGenre(this.comedyMovies, 'comedy');
+      this.filterByGenre(this.actionMovies, 'action');
+      this.filterByGenre(this.dramaMovies, 'drama');
+      this.filterByGenre(this.crimeMovies, 'crime');
+      this.filterByGenre(this.romanceMovies, 'romance');
+  
+      this.filterByCountry(Country.BR);
+      this.filterByCountry(Country.ES);
+      this.filterByCountry(Country.AR);
+      this.filterByCountry(Country.US);
+    }
 
-    this.filterByGenre(this.comedyMovies, 'comedy');
-    this.filterByGenre(this.actionMovies, 'action');
-    this.filterByGenre(this.dramaMovies, 'drama');
-    this.filterByGenre(this.crimeMovies, 'crime');
-    this.filterByGenre(this.romanceMovies, 'romance');
 
-    this.filterByCountry(Country.BR);
-    this.filterByCountry(Country.ES);
-    this.filterByCountry(Country.AR);
-    this.filterByCountry(Country.US);
 
   }
 
@@ -88,7 +92,6 @@ export class MovieListComponent extends ListBaseComponent<Movie, MovieService> i
   public filterByGenre(movies: Movie[], genre:string): void {
     this.models.map((movie, idx) => {
       movie.genre.map (objGenre => {
-        console.log (objGenre)
        if (objGenre === genre) {
         movies.push(movie);
        }

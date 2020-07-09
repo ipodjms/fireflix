@@ -32,11 +32,12 @@ export class SigninGuard implements CanActivate {
       this.auth.user.subscribe((data: any) => {
         if (!!data) {
           resolve(false);
-          this.router.navigate(["movies"]);
+          // this.router.navigate(["movies"]);
         } else {
           resolve(true);
         }
       });
+      return true
     });
   }
 }

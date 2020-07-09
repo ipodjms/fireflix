@@ -25,4 +25,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(["profiles"]);
   }
 
+  public goToMovies(): void {
+    this.router.navigate(["movies"]);
+  }
+
 }

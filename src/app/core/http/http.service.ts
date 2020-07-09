@@ -44,7 +44,6 @@ export class HttpService<T> {
   // }
 
   public getAll(): T[] {
-    console.log ('movies');
     return this.buildFakeMovies();
   }
 
@@ -68,7 +67,7 @@ export class HttpService<T> {
       let numbers = this.ramdomNumber();
       let movie = new Movie();
       movie.id = 'movie-' + String(country + i);
-      movie.name = `Movie ${i}`;
+      movie.name = `Movie - ${String(country + i)}`;
       movie.duration = 0;
 
       movie.genre = [];
@@ -77,7 +76,7 @@ export class HttpService<T> {
       movie.genre.push(cat[numbers[1]]);
 
       // somente 2 cat por movie
-      //movie.genre.push(cat[numbers[2]]);
+      movie.genre.push(cat[numbers[2]]);
 
       if (i % 2 == 0) {
         movie.source =  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
@@ -101,7 +100,6 @@ export class HttpService<T> {
       if (numbers.indexOf(ramdom) === -1)
           numbers.push(ramdom);
     }
-      console.log (numbers);
       return numbers;
   }
 
