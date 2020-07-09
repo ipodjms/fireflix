@@ -20,7 +20,6 @@ export class SigninGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    console.log("guarda de sign in");
     return this.verifyAccess();
   }
   verifyAccess() {
@@ -28,7 +27,6 @@ export class SigninGuard implements CanActivate {
       this.auth.user.subscribe((data: any) => {
         if (!!data) {          
           resolve(false);
-          console.log (this.router.url);
           let currentUrl = String (this.router.url);
           if (currentUrl.indexOf('movies/watch') === -1 ) {
             this.router.navigate(["movies"]);

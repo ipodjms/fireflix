@@ -103,7 +103,6 @@ export class MovieListComponent extends ListBaseComponent<Movie, MovieService> i
 
 
   public onNavigateToMovie(event): void {
-    console.log (event);
     let id = event;
     this.router.navigate(['watch', id], {
       replaceUrl: false,

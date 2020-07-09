@@ -1,16 +1,22 @@
-{{user?.displayName}}
-{{user?.email}}
-{{user?.phoneNumber}}
-<img src="{{image || user?.photoURL}}" alt="">
-{{userNick}}
+<div class="container">
+    <h1 *ngIf="userNick !== '' && userNick !== undefined ">Hello {{userNick}} </h1>
+    <h2 *ngIf="!userNick">Hello {{user?.displayName}}</h2>
+    <h3>{{user?.email}}</h3>    
+    <img src="{{image || user?.photoURL}}" alt="">
+    
+    <form action="">
+        <div class="form-group">
+            <label for="userNick">Seu Apelido</label>
+            <input class="form-control" type="text" [(ngModel)]="userNick" (blur)="setNickName(userNick)" name="userNick">
+        
+            <label for="dataImage">Change Profile Image</label>
+            <input class="form-control-file" type="file" accept="image/*" (change)="changeListener($event)" name="dataImage">
+        
+            <button class="btn btn-primary mt-2" (click)="removeImage()">Remove Image</button>
 
-<form action="">
-    <label for="userNick">Seu Apelido</label>
-    <input type="text" [(ngModel)]="userNick" (blur)="setNickName(userNick)" name="userNick">
+        </div>
 
-    <label for="dataImage">Change Profile Image</label>
-    <input type="file" accept="image/*" (change)="changeListener($event)" name="dataImage">
 
-    <button (click)="removeImage()">Remove Image</button>
-
-</form>
+    </form>
+    
+</div>

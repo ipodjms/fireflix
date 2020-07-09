@@ -6,7 +6,7 @@
                     <span class="screen-reader-text">Netflix</span>
                 </a>
                 <div>
-                    <span class="mr-3" (click)="goToProfiles()">
+                    <span class="mr-3 c-pointer" (click)="goToProfiles()">
                         <img src="{{auth.auth?.currentUser?.photoURL}}" alt="" class="profile">
                     </span>
                     <button *ngIf="auth.user | async" (click)="logout()" class="btn btn-primary btn-sm btn-outline-danger">Log Out</button>
