@@ -13,15 +13,15 @@ const routes: Routes = [
     canActivate: [SigninGuard],
   },
   {
-    path: "movies",
-    loadChildren: () =>
-      import("./movies/movies.module").then((m) => m.MoviesModule),
-    canActivate: [AuthGuard],
-  },
-  {
     path: "profiles",
     loadChildren: () =>
       import("./profiles/profiles.module").then((m) => m.ProfilesModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "movies",
+    loadChildren: () =>
+      import("./movies/movies.module").then((m) => m.MoviesModule),
     canActivate: [AuthGuard],
   }
 

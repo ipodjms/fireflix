@@ -23,6 +23,7 @@ export class ListBaseComponent<M extends ModelBase, S extends HttpService<M>> im
     // this.service.getAll().subscribe((models) => {
     //   this.models = models;
     // });
+
     this.models = this.service.getAll();
   }
 

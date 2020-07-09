@@ -9,8 +9,13 @@ const routes: Routes = [
     component: MovieListComponent,
   },
   {
+    path: "movies",
+    component: MovieListComponent,
+  },
+  {
     path: 'watch/:id',
-    component: MovieDetailComponent
+    component: MovieDetailComponent,
+    
   },
 ];
 @NgModule({

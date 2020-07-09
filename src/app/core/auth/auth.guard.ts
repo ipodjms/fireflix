@@ -8,7 +8,6 @@ import {
   Route,
 } from "@angular/router";
 import { Observable } from "rxjs";
-import { first, tap } from "rxjs/operators";
 import { AngularFireAuth } from "@angular/fire/auth";
 
 @Injectable({ providedIn: "root" })

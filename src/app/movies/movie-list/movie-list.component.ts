@@ -2,7 +2,7 @@ import { Country } from './../shared/country.enum';
 import { Movie } from 'src/app/movies/shared/movie';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MovieService } from './../shared/movie.service';
-import { Component, OnInit, Injector, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Injector, OnChanges, SimpleChanges, AfterViewChecked } from '@angular/core';
 import { ListBaseComponent } from 'src/app/core/list-base';
 
 @Component({
@@ -26,11 +26,13 @@ export class MovieListComponent extends ListBaseComponent<Movie, MovieService> i
 
   constructor(injector: Injector, service: MovieService, private router: Router, private activatedRoute: ActivatedRoute) {
     super(injector, service);
+    
   }
+
 
   public ngAfterContentInit(): void {
 
-    if (!!this.models) {
+    
       this.brMovies = [...this.models];
       this.esMovies = [...this.models];
       this.arMovies = [...this.models];
@@ -46,9 +48,9 @@ export class MovieListComponent extends ListBaseComponent<Movie, MovieService> i
       this.filterByCountry(Country.ES);
       this.filterByCountry(Country.AR);
       this.filterByCountry(Country.US);
-    }
+    
 
-
+    
 
   }
 

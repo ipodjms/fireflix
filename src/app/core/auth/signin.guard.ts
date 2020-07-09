@@ -4,21 +4,17 @@ import {
   CanActivate,
   Router,
   RouterStateSnapshot,
+  ActivatedRoute,
 } from "@angular/router";
 import { Observable } from "rxjs";
-import { AngularFireAuthGuard } from "@angular/fire/auth-guard";
 import { AngularFireAuth } from "@angular/fire/auth";
-import { first, tap } from "rxjs/operators";
-import { promise } from "protractor";
 
 @Injectable({
   providedIn: "root",
 })
-@NgModule({
-  providers: [AngularFireAuth],
-})
+
 export class SigninGuard implements CanActivate {
-  constructor(private router: Router, private auth: AngularFireAuth) {}
+  constructor(private router: Router, private auth: AngularFireAuth, private activatedRoute: ActivatedRoute) {}
 
   public canActivate(
     next: ActivatedRouteSnapshot,
@@ -30,14 +26,19 @@ export class SigninGuard implements CanActivate {
   verifyAccess() {
     return new Promise<boolean>((resolve) => {
       this.auth.user.subscribe((data: any) => {
-        if (!!data) {
+        if (!!data) {          
           resolve(false);
-          // this.router.navigate(["movies"]);
+          console.log (this.router.url);
+          let currentUrl = String (this.router.url);
+          if (currentUrl.indexOf('movies/watch') === -1 ) {
+            this.router.navigate(["movies"]);
+          } else {
+            resolve(true);  
+          }          
         } else {
           resolve(true);
         }
       });
-      return true
     });
   }
 }
