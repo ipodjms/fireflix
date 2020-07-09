@@ -8,7 +8,7 @@ import { ListBaseComponent } from 'src/app/core/list-base';
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css']
+  styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent extends ListBaseComponent<Movie, MovieService> implements OnChanges {
 
@@ -23,8 +23,6 @@ export class MovieListComponent extends ListBaseComponent<Movie, MovieService> i
   public dramaMovies: Movie[] = [];
   public crimeMovies: Movie[] = [];
   public romanceMovies: Movie[] = [];
-  
-
 
   constructor(injector: Injector, service: MovieService, private router: Router, private activatedRoute: ActivatedRoute) {
     super(injector, service);
