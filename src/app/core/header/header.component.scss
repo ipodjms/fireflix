@@ -1,0 +1,24 @@
+.header {
+    position: relative;
+    z-index: 1;
+    .svg-nfLogo {
+        text-decoration: none;
+        vertical-align: middle;
+        fill: #e50914;
+        display: inline-block;
+        line-height: 90px;
+    }
+
+    .svg-nfLogo .svg-icon-netflix-logo {
+        height: 45px;
+        width: 167px;
+        vertical-align: middle;
+    }
+
+    .screen-reader-text {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }    
+}
+
