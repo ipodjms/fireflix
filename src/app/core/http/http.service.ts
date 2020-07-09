@@ -51,39 +51,23 @@ export class HttpService<T> {
 
   public buildFakeMovies(): T[] {
     let fakeMovieList: Movie[] = [];
-    // fakeMovieList = [
-    //   {
-    //     id: 'ee2cb54e-c05c-11ea-b3de-0242ac130004',
-    //     name: 'Movie 1',
-    //     duration: 90000,
-    //     genre: ['humor', 'comedy'],
-    //     source: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-    //     country: Country.BR
-    //   },
-    //   {
-    //     id: '009a52a4-c05d-11ea-b3de-0242ac130004',
-    //     name: 'Movie 2',
-    //     duration: 90000,
-    //     genre: ['comedy', 'action', 'drama', 'crime', 'romance'],
-    //     source: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-    //     country: Country.BR
-    //   }
-    // ];
-    fakeMovieList = fakeMovieList.concat(this.x(Country.BR));
+    fakeMovieList = fakeMovieList.concat(this.makeMoviesByCoutry(Country.BR));
+    fakeMovieList = fakeMovieList.concat(this.makeMoviesByCoutry(Country.AR));
+    fakeMovieList = fakeMovieList.concat(this.makeMoviesByCoutry(Country.ES));
+    fakeMovieList = fakeMovieList.concat(this.makeMoviesByCoutry(Country.US));
     return fakeMovieList as unknown as T[];
   }
 
-  x(country: Country): Movie[] {
+  public makeMoviesByCoutry(country: Country): Movie[] {
     let i;
     let cat = ['comedy', 'action', 'drama', 'crime', 'romance'];
     
     let fakeMovieList: Movie[] = [];
     
-
     for (i = 0; i < 10; i++) {
       let numbers = this.ramdomNumber();
       let movie = new Movie();
-      movie.id = uuid.v4();
+      movie.id = 'movie-' + String(country + i);
       movie.name = `Movie ${i}`;
       movie.duration = 0;
 
@@ -92,7 +76,15 @@ export class HttpService<T> {
       movie.genre.push(cat[numbers[0]]);
       movie.genre.push(cat[numbers[1]]);
       movie.genre.push(cat[numbers[2]]);
-  
+
+      if (i % 2 == 0) {
+        movie.source =  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+      }
+      else {
+        movie.source =  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4';
+      }
+      
+
       movie.country = country;
       fakeMovieList.push(movie);
     }
@@ -110,9 +102,5 @@ export class HttpService<T> {
       console.log (numbers);
       return numbers;
   }
-
-sort() {
-
-}
 
 }

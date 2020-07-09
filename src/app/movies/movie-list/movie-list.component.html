@@ -2,15 +2,19 @@
 
 <section class="d-flex flex-wrap w-100">
     <div class="m-4" *ngFor="let movie of models; trackBy: trackByMovie">
-      {{movie.genre | json}}
+      <div *ngIf="movie">
         <app-movie
-          [movie]="movie"  
+          [(movie)]="movie"  
           (navigateToMovie)="onNavigateToMovie($event)"                  
         ></app-movie>
       </div>
+
+      </div>
   </section>
 
-  {{brazilianMovies.length}}
+  {{brMovies.length}}
+
+
   <br />
   {{comedyMovies.length}}
 
