@@ -1,3 +1,8 @@
+div.hold-container {
+    &.bg {
+        background-color: rgb(20, 20, 20);
+    }
+}
 .header {
     position: relative;
     z-index: 1;
@@ -20,5 +25,10 @@
         top: -9999px;
         left: -9999px;
     }    
+
+    .profile {
+        width: 52px;
+    }
+
 }
 

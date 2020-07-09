@@ -1,20 +1,143 @@
-<p>movie-list works!</p>
 
-<section class="d-flex flex-wrap w-100">
-    <div class="m-4" *ngFor="let movie of models; trackBy: trackByMovie">
-      <div *ngIf="movie">
-        <app-movie
-          [(movie)]="movie"  
-          (navigateToMovie)="onNavigateToMovie($event)"                  
-        ></app-movie>
+<div class="hold">
+  <div class="container">
+    <!-- BR MOVIES-->
+    <section class="d-flex flex-wrap w-100">
+      <h1>BR Movies</h1>
+      <div class="row">        
+        <div class="col" *ngFor="let movie of brMovies;">
+          <div *ngIf="movie">
+            <app-movie
+              [(movie)]="movie"  
+              (navigateToMovie)="onNavigateToMovie($event)"                  
+            ></app-movie>
+          </div>
+          </div>
       </div>
-
+    </section>  
+    <!-- END BR MOVIES -->
+    <!-- ES MOVIES-->
+    <section class="d-flex flex-wrap w-100">
+      <h1>ES Movies</h1>
+      <div class="row">        
+        <div class="col" *ngFor="let movie of esMovies;">
+          <div *ngIf="movie">
+            <app-movie
+              [(movie)]="movie"  
+              (navigateToMovie)="onNavigateToMovie($event)"                  
+            ></app-movie>
+          </div>
+          </div>
       </div>
-  </section>
+    </section>  
+    <!-- END ES MOVIES -->
+    <!-- AR MOVIES-->
+    <section class="d-flex flex-wrap w-100">
+      <h1>AR Movies</h1>
+      <div class="row">        
+        <div class="col" *ngFor="let movie of arMovies;">
+          <div *ngIf="movie">
+            <app-movie
+              [(movie)]="movie"  
+              (navigateToMovie)="onNavigateToMovie($event)"                  
+            ></app-movie>
+          </div>
+          </div>
+      </div>
+    </section>  
+    <!-- END AR MOVIES -->
+    <!-- US MOVIES-->
+    <section class="d-flex flex-wrap w-100">
+      <h1>US Movies</h1>
+      <div class="row">        
+        <div class="col" *ngFor="let movie of usMovies;">
+          <div *ngIf="movie">
+            <app-movie
+              [(movie)]="movie"  
+              (navigateToMovie)="onNavigateToMovie($event)"                  
+            ></app-movie>
+          </div>
+          </div>
+      </div>
+    </section>  
+    <!-- END US MOVIES -->  
+    <!-- COMEDY MOVIES-->
+    <section class="d-flex flex-wrap w-100">
+      <h1>COMEDY Movies</h1>
+      <div class="row">        
+        <div class="col" *ngFor="let movie of comedyMovies;">
+          <div *ngIf="movie">
+            <app-movie
+              [(movie)]="movie"  
+              (navigateToMovie)="onNavigateToMovie($event)"                  
+            ></app-movie>
+          </div>
+          </div>
+      </div>
+    </section>  
+    <!-- END US MOVIES --> 
+    <!-- ACTION MOVIES-->
+    <section class="d-flex flex-wrap w-100">
+      <h1>ACTION Movies</h1>
+      <div class="row">        
+        <div class="col" *ngFor="let movie of actionMovies;">
+          <div *ngIf="movie">
+            <app-movie
+              [(movie)]="movie"  
+              (navigateToMovie)="onNavigateToMovie($event)"                  
+            ></app-movie>
+          </div>
+          </div>
+      </div>
+    </section>  
+    <!-- END ACTION MOVIES --> 
+    <!-- DRAMA MOVIES-->
+    <section class="d-flex flex-wrap w-100">
+      <h1>DRAMA Movies</h1>
+      <div class="row">        
+        <div class="col" *ngFor="let movie of dramaMovies;">
+          <div *ngIf="movie">
+            <app-movie
+              [(movie)]="movie"  
+              (navigateToMovie)="onNavigateToMovie($event)"                  
+            ></app-movie>
+          </div>
+          </div>
+      </div>
+    </section>  
+    <!-- END DRAMA MOVIES -->  
+    <!-- CRIME MOVIES-->
+    <section class="d-flex flex-wrap w-100">
+      <h1>CRIME Movies</h1>
+      <div class="row">        
+        <div class="col" *ngFor="let movie of crimeMovies;">
+          <div *ngIf="movie">
+            <app-movie
+              [(movie)]="movie"  
+              (navigateToMovie)="onNavigateToMovie($event)"                  
+            ></app-movie>
+          </div>
+          </div>
+      </div>
+    </section>  
+    <!-- END CRIME MOVIES --> 
+    <!-- ROMANCE MOVIES-->
+    <section class="d-flex flex-wrap w-100">
+      <h1>ROMANCE Movies</h1>
+      <div class="row">        
+        <div class="col" *ngFor="let movie of romanceMovies;">
+          <div *ngIf="movie">
+            <app-movie
+              [(movie)]="movie"  
+              (navigateToMovie)="onNavigateToMovie($event)"                  
+            ></app-movie>
+          </div>
+          </div>
+      </div>
+    </section>  
+    <!-- END ROMANCE MOVIES -->            
+  
+  </div>
+</div>
 
-  {{brMovies.length}}
-
-
-  <br />
-  {{comedyMovies.length}}
 

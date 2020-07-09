@@ -75,7 +75,9 @@ export class HttpService<T> {
 
       movie.genre.push(cat[numbers[0]]);
       movie.genre.push(cat[numbers[1]]);
-      movie.genre.push(cat[numbers[2]]);
+
+      // somente 2 cat por movie
+      //movie.genre.push(cat[numbers[2]]);
 
       if (i % 2 == 0) {
         movie.source =  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
@@ -95,7 +97,7 @@ export class HttpService<T> {
     let numbers = [];
     let i = 0;
     for (i = 0; i < 4 ; i++) {
-      var ramdom = Math.floor(Math.random() * 4);
+      var ramdom = Math.floor(Math.random() * 5);
       if (numbers.indexOf(ramdom) === -1)
           numbers.push(ramdom);
     }

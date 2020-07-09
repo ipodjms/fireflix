@@ -16,9 +16,13 @@ export class HeaderComponent implements OnInit {
     this.auth.user;
   }
 
-  logout() {
+  public logout(): void {
     this.auth.auth.signOut();
     this.router.navigate(["signin"]);
+  }
+
+  public goToProfiles(): void {
+    this.router.navigate(["profiles"]);
   }
 
 }
