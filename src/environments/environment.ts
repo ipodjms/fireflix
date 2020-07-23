@@ -14,6 +14,7 @@ export const environment = {
     messagingSenderId: "1099034239660",
     appId: "1:1099034239660:web:abe7b4ed5919ac83cbb509",
   },
+  URL_BASE: 'http://localhost'
 };
 
 

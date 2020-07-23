@@ -9,6 +9,9 @@
                     <span class="mr-3 c-pointer" (click)="goToProfiles()">
                         <img src="{{auth.auth?.currentUser?.photoURL}}" alt="" class="profile">
                     </span>
+                    <span *ngIf="auth.auth?.currentUser?.displayName" class="text-white c-pointer" (click)="goToProfiles()">
+                        {{auth.auth?.currentUser?.displayName}}
+                    </span>
                     <button *ngIf="auth.user | async" (click)="logout()" class="btn btn-primary btn-sm btn-outline-danger">Log Out</button>
                 </div>
         </div>
